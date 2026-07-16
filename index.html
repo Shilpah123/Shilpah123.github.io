@@ -436,6 +436,95 @@ Connect with me on LinkedIn for professional conversations.
 
 </footer>
 
+<script>
+
+fetch("data/testimonials.json")
+
+.then(response => response.json())
+
+.then(testimonials => {
+
+
+const container =
+document.getElementById(
+"testimonial-container"
+);
+
+
+testimonials
+.filter(t => t.approved)
+
+.forEach(t => {
+
+
+let tags = "";
+
+t.categories.forEach(category => {
+
+tags += `<span>${category}</span>`;
+
+});
+
+
+container.innerHTML += `
+
+<div class="testimonial-card">
+
+<h3>
+${t.name}
+</h3>
+
+<div class="testimonial-role">
+
+${t.role}
+${t.company ? " | " + t.company : ""}
+
+</div>
+
+
+<p class="testimonial-text">
+
+"${t.testimonial}"
+
+</p>
+
+
+<div class="testimonial-tags">
+
+${tags}
+
+</div>
+
+
+${t.linkedin ?
+`<br>
+<a href="${t.linkedin}" target="_blank">
+LinkedIn Profile
+</a>` 
+: ""}
+
+
+</div>
+
+`;
+
+});
+
+
+})
+
+.catch(error => {
+
+console.error(
+"Unable to load testimonials:",
+error
+);
+
+});
+
+
+</script>
+
 
 </body>
 </html>

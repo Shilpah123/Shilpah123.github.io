@@ -1,1 +1,15 @@
-[]
+[
+  {
+    "name": "Test User",
+    "role": "Software Engineer",
+    "company": "Test Company",
+    "linkedin": "",
+    "testimonial": "Shilpa demonstrated strong skills in AI automation and technical workflows.",
+    "date": "2026-07-15",
+    "categories": [
+      "AI",
+      "Automation"
+    ],
+    "approved": true
+  }
+]
